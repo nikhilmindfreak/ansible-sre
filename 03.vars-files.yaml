@@ -3,11 +3,7 @@
   gather_facts: false
   vars_files:
     - vars.yaml  # Include the variables from vars.yaml file
-  tasks: read the variables from vars.yaml file
-    - name: Display course information
-      ansible.builtin.debug:
-        msg: "Course: {{ Course }}, Trainer: {{ Trainer }}, Duration: {{ Duration }}"
-    
-    - name: Display wishes
-      ansible.builtin.debug:
-        msg: "Wishes: {{ WISHES }}"
+  tasks: 
+  - name: Display course information
+    ansible.builtin.debug:
+      msg: "Course: {{ Course }}, Trainer: {{ Trainer }}, Duration: {{ Duration }}"
