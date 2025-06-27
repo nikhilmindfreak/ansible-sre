@@ -1,0 +1,15 @@
+- name: install and run nginx
+  hosts: all
+  gather_facts: false  # Disable fact gathering for faster execution
+  become: true  # Use privilege escalation to install packages
+  tasks:
+    - name: Install nginx
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+
+    - name: Start nginx service
+      ansible.builtin.systemd:
+        name: nginx
+        state: started
+        enabled: true
