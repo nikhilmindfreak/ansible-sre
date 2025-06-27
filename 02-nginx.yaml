@@ -1,11 +1,11 @@
 - name: install and run nginx
   hosts: all
-  become: true  # Use privilege escalation to install packages
+  become: true  # Use privilege escalation to install packages  like -b 
   tasks:
     - name: Install nginx
       ansible.builtin.yum:
         name: nginx
-        state: latest
+        state: latest  # use remove to remove the package
 
     - name: Start nginx service
       ansible.builtin.systemd:  # Use systemd to manage services , start a service
