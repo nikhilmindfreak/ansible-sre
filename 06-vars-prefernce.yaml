@@ -15,10 +15,11 @@
     ansible.builtin.debug:
       msg: "Hello, Good {{WISHES}}"
 
-# 1. arguments
-# 2. Task level
-# 3. variable files
-# 4. Prompt
-# 5. Play level
-# 6. inventory
-# 7. role level
+# variable preference in Ansible follows a specific order of precedence. The order is as follows:
+
+# 1. arguments  ( e.g., command line arguments passed with -e or --extra-vars )
+# 2. Task level  ( e.g., variables defined within a task )
+# 3. variable files  (e.g., variables defined in files included with vars_files )
+# 5. Play level  (e.g., variables defined at the play level in the playbook)
+# 6. inventory  (e.g., variables defined in the inventory file)
+# 7. role level  (e.g., variables defined in roles) 
